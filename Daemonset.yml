@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ghost
+  labels:
+    type: cms
+spec:
+  selector:
+    matchLabels:
+      type: cms
+  template:
+    metadata:
+      name: ghost-pod
+      labels:
+        type: cms
+    spec:
+      containers:
+        - name: ghost
+          image: nginx
+...
